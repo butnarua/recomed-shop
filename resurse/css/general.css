@@ -1,0 +1,298 @@
+html {
+    --dimensiune-text: 18px;
+    --spatiere-text: 1rem;
+    font-size: var(--dimensiune-text);
+    transition: all 500ms linear;
+}
+
+.eater-regular {
+    font-family: "Eater", serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+body {
+    --spatiere-pagina: 80px;
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+    background-image: linear-gradient(transparent, transparent 15%, var(--background-color) 40%, var(--background-color) 60%, transparent 85%, transparent), url("../imagini/background-abstract.png");
+    background-attachment: fixed;
+    background-size: cover;
+    /* color: var(--text-secondary-1); */
+    /* overflow-x: hidden; */
+}
+
+main {
+    background-color:  var(--background-color);
+    border-radius: var(--border-radius);
+}
+
+header, footer {
+    padding: var(--spatiere-text);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header {
+    background-color: var(--background-header); 
+}
+
+footer {
+    background-color: var(--background-footer);
+    color: var(--text-primary);
+}
+
+/* .img-categorii {
+    width: 100%;
+    max-width: 600px;
+} */
+
+/* Task layout - Grid */
+#grid-pagina {
+    --grid-gap: 1.38rem;
+    display: grid;
+    grid-template-areas: "zona1 zona1 zona1"
+                         "zona3 zona2 zona4"
+                         "zona8 zona8 zona8"
+                         "zona7 zona5 zona6";
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    grid-gap: var(--grid-gap);
+    /* padding-top: var(--grid-gap);
+    padding-bottom: var(--grid-gap); */
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+#grid-pagina > * {
+    border: 0.2rem ridge var(--border-secondary-1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    /* background-color: var(--background-secondary-1); */
+    margin: 0;
+    padding: var(--spatiere-text);
+
+}
+
+#categorii-produse {
+    grid-area: zona1;
+}
+
+#utilizare {
+    grid-area: zona2;
+}
+
+#calendar {
+    grid-area: zona3;
+}
+
+#anunturi {
+    grid-area: zona4;
+}
+
+#utilizatori {
+    grid-area: zona5;
+}
+
+#statistici {
+    grid-area: zona6;
+}
+
+#server {
+    grid-area: zona7;
+}
+
+#diverse {
+    grid-area: zona8;
+}
+
+/* Task tabel */
+#tab-aparatura{  
+    border-collapse: collapse;
+    width: 100%;
+    /* min-width: 800px; */
+}
+
+/* Caption poziționat sub tabel */
+#tab-aparatura caption {
+    caption-side: bottom;
+    text-align: center;
+    margin-top: 0.8rem;
+}
+
+/* Borderele cu culori alternate între coloane */
+#tab-aparatura td:nth-child(odd) + td,
+#tab-aparatura th:nth-child(odd) + th {
+  border-left: 0.2rem solid var(--border-primary); /* Culoare c1 */
+}
+
+#tab-aparatura td:nth-child(even) + td,
+#tab-aparatura th:nth-child(even) + th {
+  border-left: 0.2rem solid var(--border-secondary-2); /* Culoare c2 */
+}
+
+/* Borderele dintre secțiunile thead, tbody, tfoot */
+#tab-aparatura thead {
+    border-bottom: 0.4rem solid var(--border-secondary-1);
+  }
+  
+#tab-aparatura tbody {
+    border-bottom: 0.4rem solid var(--border-secondary-1);
+  }
+
+/* Grosimea minimă a borderelor obișnuite */
+#tab-aparatura td,
+#tab-aparatura th {
+  border: 0.1rem solid var(--border-secondary-1);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Stilizarea rândurilor la hover */
+#tab-aparatura tbody tr:hover {
+    box-shadow: inset 0 0 20px var(--background-secondary-1);
+    transition: box-shadow 0.5s ease;
+  }
+
+#tab-aparatura tfoot tr td {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--text-secondary-2);
+  }
+
+/* Scrollbar orizontal pentru container pe ecrane mici și medii */
+.table-container {
+    overflow-x: auto;
+  }
+
+/* Task taburi iframe - Stilizare pentru containerul principal */
+.container-iframe {
+    display: flex;
+    flex-direction: row; /* Coloane alăturate */
+    align-items: flex-start; /* Aliniere sus */
+}
+
+/* Stilizare pentru linkuri */
+.taburi-iframe {
+    display: flex;
+    flex-direction: column; /* Linkurile să fie afișate pe verticală */
+    gap: 0.2rem; /* Spațiu între linkuri */
+}
+
+.taburi-iframe a {
+    display: inline-block;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    background-color: var(--background-secondary-2);
+    text-decoration: none;
+    border: var(--border-radius) solid var(--border-primary);
+    /* border-radius: var(--border-radius); */
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    border-right: none;
+    font-weight: bold;
+    transition: all 0.5s linear;
+    color: var(--text-secondary-1);
+    box-shadow: var(--box-shadow);
+    padding-right: 1rem;
+    
+}
+
+.taburi-iframe a:hover {
+    background-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+/* Stilizare pentru iframe */
+iframe {
+    flex: 1; /* Ocupă spațiul rămas în container */
+    border: var(--border-radius) solid var(--border-primary);
+    height: 25rem;
+}
+
+/* Task Link top */
+#link-top {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.35rem solid var(--text-primary);
+    border-right: 0.35rem solid var(--border-secondary-1);
+    border-bottom: 0.35rem solid var(--text-primary);
+    border-left: 0.35rem solid var(--border-secondary-1);
+    box-shadow: inset 0 0.125rem 0.25rem var(--color-5);
+    opacity: 0.8;
+    transition: opacity 600ms, transform 600ms;
+    
+}
+
+#link-top:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+#arrow {
+    font-size: 2.5rem;
+    color: var(--border-secondary-1);
+    text-shadow: 0 0 0.625rem var(--text-primary), 0 0 1.25rem var(--text-primary);
+    transition: text-shadow 300ms, transform 600ms;
+    filter: blur(0.125rem);
+}
+
+#link-top:hover #arrow {
+    filter: blur(0);
+    text-shadow: none;
+    transform: rotate(-90deg); /* Rotație inversă */
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1{
+    color: var(--text-primary);
+    animation-name: misca_titlu;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-delay: 0.2s;
+    opacity: 0;
+    transform: translateX(40%);
+    animation-fill-mode: forwards;
+}
+
+@keyframes misca_titlu {
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+h2 {
+    color: var(--color-1);
+}
+
+
+  

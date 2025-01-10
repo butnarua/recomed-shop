@@ -1,0 +1,33 @@
+html {
+    --dimensiune-text: 16px;
+}
+
+body {
+    --spatiere-pagina: 60px;
+}
+
+/* Task layout - Grid */
+#grid-pagina {
+    --grid-gap: 1.11rem;
+    grid-template-areas: "zona1 zona1"
+                         "zona2 zona3"
+                         "zona2 zona4"
+                         "zona5 zona6"
+                         "zona7 zona7"
+                         "zona8 zona8";
+    
+}
+
+/* Scrollbar orizontal pentru container pe ecrane mici și medii */
+.table-container {
+    overflow-x: auto;
+  }
+
+  h1 {
+    opacity: 1;
+    transform: translateX(0);
+    animation: none; /* Elimină animația pe dispozitivele mici */
+}
+
+
+
