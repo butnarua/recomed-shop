@@ -28,3 +28,13 @@ body {
 .container-iframe{
     display: none;
 }
+
+h1{
+    margin-top: 0;
+}
+
+header{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+

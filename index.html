@@ -17,11 +17,17 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Eater&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="resurse/css/general.css" type="text/css" />
         <link rel="stylesheet" href="resurse/css/general1000.css" type="text/css" media="screen and (max-width:1000px)"/>
         <link rel="stylesheet" href="resurse/css/general700.css" type="text/css" media="screen and (max-width:700px)"/>
+
+        <link rel="stylesheet" href="resurse/css/nav.css" type="text/css" />
+        <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)"/>
+        <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)"/>
+
+        <link rel="stylesheet" href="resurse/css/printare.css" type="text/css"/>
 
         <style>
             :root {
@@ -63,10 +69,19 @@
     </head>
     <body>
         <header>
-            <h1>Recomed Shop</h1>          
+            <h1>Recomed Shop</h1>
+            <p id="watermark">Butnaru<br>Andrei Bogdan</p>
             <nav>
-                <ul>
-                    <li><a href="index.html">Acasă</a>
+                <input id="ch-menu" type="checkbox">
+                <div class="hamburger-menu-container">
+                    <label for="ch-menu" id="hamburger-menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </label>
+                </div>
+                <ul class="meniu">
+                    <li><a href="#"><div class="text-icon" id="acasa">Acasa</div><div class="imag-icon" id="acasa-mediu"><span class="fas fa-regular fa-house"></span></div></a>
                         <ul>
                             <li><a href="#categorii-produse">Categorii produse</a></li>
                             <li><a href="#noutati">Anunțuri</a></li>
@@ -74,14 +89,14 @@
                             <li><a href="#intrebari">Întrebări frecvente</a></li>
                         </ul>
                     </li>
-                    <li><a href="despre.html">Despre</a>
+                    <li><a href="#">Despre</a>
                         <ul>
                             <li><a href="despre.html#prezentare">Prezentare</a></li>
                             <li><a href="despre.html#galerie">Galerie</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="produse.html">Produse</a>
+                    <li><a href="#">Produse</a>
                         <ul>
                             <li><a href="produse.html#fizioterapie">Fizioterapie</a></li>
                             <li><a href="produse.html#kinetoterapie">Kinetoterapie</a></li>
@@ -90,8 +105,8 @@
                         </ul>
                     </li>
 
-                    <li><a href="register.html#register">Înregistrare</a></li>
-                    <li><a href="contact.html#contact">Contact</a></li>
+                    <li><a href="#">Inregistrare</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
                 
             </nav>
@@ -116,7 +131,7 @@
                                 </a>
                                 <p><b>Aparatura medicala</b> de <b>fizioterapie</b> este folosită pentru tratarea și ameliorarea durerilor precum și instalarea unei stări de bine, iar prin gama noastră de <b>aparatura medicala</b> vă deschidem această cale.</p>
                                 <p><q>Durerea pe care o simți azi este starea de bine pe care o simți mâine.</q></p>
-                                <a href="produse.html#fizioterapie">Vezi produsele</a>
+                                <a class="btn-produse" href="produse.html#fizioterapie">Vezi produsele</a>
                             </li>
                             <li>
                                 <a href="produse.html#kinetoterapie">
@@ -131,7 +146,7 @@
                                     <p>Kinesio taping reprezintă niște benzi speciale folosite pentru a ajuta musculatura să rămână în repaus.</p>
                                 </aside>
                                 <p><q>Fă astăzi ceva pentru care corpul tău îți va mulțumi mâine!</q></p>
-                                <a href="produse.html#kinetoterapie">Vezi produsele</a>
+                                <a class="btn-produse" href="produse.html#kinetoterapie">Vezi produsele</a>
                             </li>
                             <li>
                                 <a href="produse.html#masaj-wellness">
@@ -143,7 +158,7 @@
                                 </a>
                                 <p>Prin <b>masaj</b> pot dispărea contracturile musculare iar corpul intră într-o stare de relaxare profundă</p>
                                 <p><q>Fiecare zi e o nouă șansă să fii cea mai bună versiune a ta!</q></p>
-                                <a href="produse.html#masaj-wellness">Vezi produsele</a>
+                                <a class="btn-produse" href="produse.html#masaj-wellness">Vezi produsele</a>
                             </li>
                             <li>
                                 <a href="produse.html#accesorii">
@@ -154,7 +169,7 @@
                                     </picture>
                                 </a>
                                 <p><b>Accesoriile</b> noastre asigură calitatea actului <b>medical</b> prin schimbarea la timp a unor <b>electrozi</b>, <b>benzi elastice</b> și alte <b>accesorii</b> care s-au uzat în timp, cu unele noi și de calitate superioară.</p>
-                                <a href="produse.html#accesorii">Vezi produsele</a>
+                                <a class="btn-produse" href="produse.html#accesorii">Vezi produsele</a>
                             </li>
                         </ul>
                     </section>
@@ -280,7 +295,7 @@
                             </div>
                             <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>  
-                        <p>Pentru a ține evidența sănătății dumneavoastră vă recomandăm să descărcați carnețelul de sănătate.<a href="./resurse/documente/carnețelul-cu-sănătate.docx" download><span class="fa-solid fa-download fa-flip fa-lg"></span></a></p>
+                        <p id="descarcare">Pentru a ține evidența sănătății dumneavoastră vă recomandăm să descărcați carnețelul de sănătate.<a href="./resurse/documente/carnețelul-cu-sănătate.docx" download><span class="fa-solid fa-download fa-flip fa-lg"></span></a></p>
                     </section>
 
                     <section id="intrebari">
@@ -315,6 +330,7 @@
             </address>
             <small>&copy; <time datetime="2024-11-28">2024</time> Recomed Shop. Toate drepturile rezervate.</small>
             <a href="#" title="mergi sus" id="link-top"><div id="arrow">&#8593;</div></a>
+            <p id="banner-printare">Acesta este un proiect școlar!</p>
         </footer>
     </body>
 </html>

@@ -1,0 +1,114 @@
+nav{
+    --latime-buton:12rem;
+    --inaltime-buton:1.5rem;
+    --culoare-deschisa-meniu: var(--color-4);
+    --culoare-inchisa-meniu: var(--color-5);
+    --culoare-text-hover: var(--text-primary); // Adăugat pentru a seta culoarea textului la hover
+    --umbra-hover: inset 0 0 10px rgba(255, 255, 255, 0.7); // Adăugat pentru a defini umbra la hover
+    --culoare-sageata: var(--text-primary); // Adăugat pentru culoarea săgeții
+    background-color: var(--culoare-deschisa-meniu);
+    font-family: "Lora", serif;
+}
+
+#hamburger, #ch-menu{
+    display: none;
+}
+
+ul.meniu div.imag-icon{
+    display: none;
+}
+
+/* submeniu */
+ul.meniu{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    ul{
+        display: none;
+        padding: 0;
+        list-style-type: none;
+        z-index: 3;
+        position: relative;
+        margin-left: -1px;
+        animation-name: afis_submeniu;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        transform-origin: 50% 0;
+
+        li{
+            position: relative; // Necesar pentru poziționarea săgeții
+
+            &:hover::before {
+                transform: translateX(100%); // Săgeata glisează complet spre dreapta
+                opacity: 1;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 25%;
+                left: -5%; // Pornire în afara elementului
+                // transform: translateY(-50%);
+                width: 0.9rem;
+                height: 0.7rem;
+                background-color: var(--culoare-sageata); // Culoarea săgeții
+                clip-path: polygon(0 55%, 85% 55%, 60% 0%, 100% 50%, 60% 100%, 85% 60%, 0 65%); // Formă de triunghi
+                transition: transform 0.7s ease; // Tranziție lină
+                opacity: 0;
+            }
+        }
+    }
+
+    li{
+        // border: 1px solid var(--text-primary);
+        background-color: var(--culoare-deschisa-meniu);
+        width: var(--latime-buton);
+        height: var(--inaltime-buton);
+        line-height: var(--inaltime-buton);
+        text-align: center;
+        font-weight: bold;
+        transition: all 0.5s linear; // Modificat pentru a include tranziția umbrei și culorii textului
+        box-sizing: border-box;
+
+        &:hover{
+            box-shadow: var(--umbra-hover); // Adăugat pentru a aplica umbra la hover
+            background-color: var(--culoare-inchisa-meniu); // Modificat pentru a schimba fundalul la hover
+
+            a{
+                color: var(--culoare-text-hover); // Modificat pentru a schimba culoarea textului la hover
+            }
+
+            ul{
+                display: block;
+            }
+        }
+
+        div, a{
+            text-decoration: none;
+            color: var(--text-secondary-1);
+            display: block;
+            height: 100%;
+            cursor: pointer;
+            transition: all 0.5s linear; // Modificat pentru o tranziție lină a textului
+
+            &:hover{
+                color: var(--text-primary);
+            }
+        }
+    }
+}
+
+@keyframes afis_submeniu {
+    0%{
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}

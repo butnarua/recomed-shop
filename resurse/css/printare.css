@@ -1,0 +1,112 @@
+#banner-printare,
+#watermark {
+    display: none;
+}
+
+@media print {
+    body{
+        padding: 0;
+    }
+    /* Bannerul să fie afișat în susul primei pagini, centrat pe orizontală, întins pe 80% din lățimea paginii, într-un border negru punctat */
+    #banner-printare {
+        display: block;
+        text-align: center;
+        position: absolute;
+        left: 50%; /* Centrare relativă la pagina întreagă */
+        transform: translateX(-50%); /* Corectăm offset-ul pentru centrare */
+        top: 0;
+        width: 80%;
+        border: 5px dotted var(--text-secondary-1);
+        padding: 1rem;
+        box-sizing: border-box;
+        color: var(--text-secondary-1);
+    }
+
+    /* imaginile, videoclipurile, iframe-urile și alte elemente media împreună cu elemente dependente de ele (de exemplu descrierile imaginilor) vor fi ascunse. Linkul către începutul paginii va fi de asemenea ascuns */
+    picture,
+    .container-iframe,
+    #link-top,
+    #descarcare,
+    .btn-produse {
+        display: none;
+    }
+
+    /* Gridul paginii va fi afișat ca block ca să nu apară celulele secționate în paginile printate. */
+    #grid-pagina {
+        display: block;
+    }
+
+    #grid-pagina {
+        grid-template-areas: "zona-unu zona-unu"
+                             "zona-doi zona-doi"
+                             "zona-trei zona-patru"
+                             "zona-cinci zona-sase"
+                             "zona-sapte zona-sapte"
+                             "zona-opt zona-opt";
+    }
+
+    /* toate linkurile din pagină se vor afișa ca text normal (nu colorate sau subliniate) */
+    a {
+        color: var(--text-secondary-1);
+        text-decoration: none;
+    }
+
+    /* Headingul de nivel 1, cu titlu site-ului, va fi pe prima pagină, centrat pe verticală și orizontală. Va fi subliniat și cu litere de 2.5 ori mai mari decât dimensiunea de font a html-ului. Meniul va fi ascuns. După heading va fi un page break. Inaintea footerului, de asemenea va fi un page break */
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh; /* Centrare pe verticală */
+        text-align: center;
+        /* margin: 0; */
+        text-decoration: underline;
+        color: var(--text-secondary-1);
+        font-size: calc(2.5 * 1rem);
+       }
+    
+    nav{
+        display: none;
+    }
+
+    header{
+        page-break-after: always;
+    }
+
+    footer{
+        page-break-before: always;
+    }
+
+    /* Pe fiecare pagină va exista un "watermark" care va conține numele vostru. Acesta va avea lățime de 100px și înalțime de 2cm, border dublu, și opacitate 0.65 */
+    #watermark{
+        display: block;
+        position: fixed;
+        bottom: -1.5%;
+        width: 100px;
+        height: 2cm;
+        border: 4px double var(--text-secondary-1);
+        text-align: center;
+        opacity: 0.65;
+    }
+
+    /* La printare, paginile din stânga (în print preview) să aibă margine în stânga de 2.5cm și margine în dreapta de 0.5cm, iar cele din dreapta să aibă margine în dreapta de 2.5cm și 0.5cm în stânga. */
+    @page {
+        size: A4;
+        margin-bottom:2cm;
+		margin-top:2cm;
+    }
+    @page:left{
+		margin-left:2.5cm;
+		margin-right:0.5cm;
+	}
+	@page:right{
+		margin-right:2.5cm;
+		margin-left:0.5cm;
+	}
+
+    #categorii-produse,
+    #anunturi,
+    #server{
+        page-break-after: always;
+    }
+    
+}
