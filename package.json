@@ -1,0 +1,23 @@
+{
+  "name": "recomed-shop",
+  "version": "1.0.0",
+  "description": "magazin online cu aparatura pentru recuperare medicala",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aparatura",
+    "medicala",
+    "fizioterapie",
+    "kinetoterapie",
+    "masaj",
+    "recuperare"
+  ],
+  "author": "Butnaru Andrei-Bogdan",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

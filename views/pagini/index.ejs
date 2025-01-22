@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <%- include("../fragmente/head.ejs") %>
+        <meta name="description" content="Magazin online cu aparatura pentru recuperare medicala">
+        <meta name="keywords" content="aparatura medicala, fizioterapie, kinetoterapie, masaj, recuperare medicala">
+        <title>Recomed Shop</title>
+    </head>
+    <body>
+        <%- include("../fragmente/nav.ejs") %>
+        <main>
+            <div id="grid-pagina">
+                <!-- Zona 1 cu produse -->
+                <section id="categorii-produse">
+                    <h2>Produsele noastre</h2>
+                    <section>
+                        <h3>Categorii produse</h3>
+                        <p>Vă prezentăm mai jos categoriile noastre de produse ce cuprind o gamă nișată pe nevoile dumneavoastră</p>
+                        <ul>
+                            <li>
+                                <a href="produse.html#fizioterapie">
+                                    <picture>
+                                        <source srcset="/resurse/imagini/acasa/fizioterapie_200.jpg" media="(max-width:700px)">
+                                        <source srcset="/resurse/imagini/acasa/fizioterapie_380.jpg" media="(max-width:1200px)">
+                                        <img class="img-categorii" src="/resurse/imagini/acasa/fizioterapie_640.jpg" alt="fizioterapie">
+                                    </picture>
+                                </a>
+                                <p><b>Aparatura medicala</b> de <b>fizioterapie</b> este folosită pentru tratarea și ameliorarea durerilor precum și instalarea unei stări de bine, iar prin gama noastră de <b>aparatura medicala</b> vă deschidem această cale.</p>
+                                <p><q>Durerea pe care o simți azi este starea de bine pe care o simți mâine.</q></p>
+                                <a class="btn-produse" href="produse.html#fizioterapie">Vezi produsele</a>
+                            </li>
+                            <li>
+                                <a href="produse.html#kinetoterapie">
+                                    <picture>
+                                        <source srcset="/resurse/imagini/acasa/kinetoterapie_200.jpg" media="(max-width:700px)">
+                                        <source srcset="/resurse/imagini/acasa/kinetoterapie_380.jpg" media="(max-width:1200px)">
+                                        <img class="img-categorii" src="/resurse/imagini/acasa/kinetoterapie_640.jpg" alt="kinetoterapie">
+                                    </picture>
+                                </a>
+                                <p><b>Kinetoterapia</b> este segmentul de <b>recuperare medicala</b> ce folosește diverse ustensile ajutătoare precum <b>benzi elastice</b>, <i>kinesio taping</i>, cu scopul de a reface tonusul și rezistența musculară precum și mobilitatea articulară.</p>
+                                <aside>
+                                    <p>Kinesio taping reprezintă niște benzi speciale folosite pentru a ajuta musculatura să rămână în repaus.</p>
+                                </aside>
+                                <p><q>Fă astăzi ceva pentru care corpul tău îți va mulțumi mâine!</q></p>
+                                <a class="btn-produse" href="produse.html#kinetoterapie">Vezi produsele</a>
+                            </li>
+                            <li>
+                                <a href="produse.html#masaj-wellness">
+                                    <picture>
+                                        <source srcset="/resurse/imagini/acasa/masaj_200.jpg" media="(max-width:700px)">
+                                        <source srcset="/resurse/imagini/acasa/masaj_380.jpg" media="(max-width:1200px)">
+                                        <img class="img-categorii" src="/resurse/imagini/acasa/masaj_640.jpg" alt="masaj-wellness">
+                                    </picture>
+                                </a>
+                                <p>Prin <b>masaj</b> pot dispărea contracturile musculare iar corpul intră într-o stare de relaxare profundă</p>
+                                <p><q>Fiecare zi e o nouă șansă să fii cea mai bună versiune a ta!</q></p>
+                                <a class="btn-produse" href="produse.html#masaj-wellness">Vezi produsele</a>
+                            </li>
+                            <li>
+                                <a href="produse.html#accesorii">
+                                    <picture>
+                                        <source srcset="/resurse/imagini/acasa/accesorii_200.jpg" media="(max-width:700px)">
+                                        <source srcset="/resurse/imagini/acasa/accesorii_380.jpg" media="(max-width:1200px)">
+                                        <img class="img-categorii" src="/resurse/imagini/acasa/accesorii_640.jpg" alt="accesorii">
+                                    </picture>
+                                </a>
+                                <p><b>Accesoriile</b> noastre asigură calitatea actului <b>medical</b> prin schimbarea la timp a unor <b>electrozi</b>, <b>benzi elastice</b> și alte <b>accesorii</b> care s-au uzat în timp, cu unele noi și de calitate superioară.</p>
+                                <a class="btn-produse" href="produse.html#accesorii">Vezi produsele</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                 
+                <!-- Zona 2 - tabel -->
+                <section id="utilizare">
+                    <h2>Utilizarea aparaturii</h2>
+                    <div class="table-container">
+                        <table id="tab-aparatura">
+                            <caption>Utilizarea aparaturii pentru o stare de bine</caption>
+                            <thead>
+                                <tr>
+                                    <th>Denumire Aparat</th>
+                                    <th>Tip Terapie</th>
+                                    <th>Afecțiuni Tratate</th>
+                                    <th>Caracteristici</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Electrostimulator</td>
+                                    <td>Fizioterapie</td>
+                                    <td>Durere cronică, atrofie musculară</td>
+                                    <td>Stimulare electrică</td>
+                                </tr>
+                                <tr>
+                                    <td>Aparat cu ultrasunete</td>
+                                    <td>Fizioterapie</td>
+                                    <td>Inflamații, rigiditate articulară</td>
+                                    <td>Utilizează unde sonore</td>
+                                </tr>
+                                <tr>
+                                    <td>Scaun de masaj</td>
+                                    <td>Masaj</td>
+                                    <td>Stres, tensiune musculară</td>
+                                    <td>Programe automate pentru relaxare</td>
+                                </tr>
+                                <tr>
+                                    <td>Banda de alergare</td>
+                                    <td>Kinetoterapie</td>
+                                    <td>Recuperare post-traumatică</td>
+                                    <td>Reglare precisă a vitezei</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Instruirea pacientului este necesara inainte de utilizarea aparaturii</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Zona 3 - calendar evenimente -->
+                <section id="calendar">
+                    <h2>Calendar de evenimente</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nam repudiandae nulla veniam itaque ipsa omnis vitae natus deserunt, fuga facere voluptatem pariatur? Similique, dolores fugit. Quae ratione totam earum.</p>
+                </section>
+
+                 <!-- Zona 4 - anunturi -->
+                 <section id="anunturi">
+                    <h2>Anunturi</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam excepturi quia vero autem beatae reiciendis odit accusantium, aliquid eos in mollitia vitae expedita rerum aperiam, officiis dolor? Magni, debitis eaque.</p>
+                </section>
+
+                <!-- Zona 5 - lista utilizatori online -->
+                <section id="utilizatori">
+                    <h2>Utilizatori</h2>
+                    <p>IP-ul utilizatorului este: <%- locals.ip %></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sequi maxime dolorum! Repellendus perferendis odit repellat, esse ullam dolor eum? Veniam, blanditiis. Nisi sit laboriosam quasi iure, quae fuga illo.</p>
+                </section>
+
+                <!-- Zona 6 - date utilizator si statistici -->
+                <section id="statistici">
+                    <h2>Statistici</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam excepturi quia vero autem beatae reiciendis odit accusantium, aliquid eos in mollitia vitae expedita rerum aperiam, officiis dolor? Magni, debitis eaque.</p>
+                </section>
+
+                <!-- Zona 7 - date site si server -->
+                <section id="server">
+                    <h2>Site si server</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quas quidem, nisi laboriosam error recusandae minus qui maiores obcaecati aut architecto, eligendi autem voluptatibus corporis. Dolores magni maxime ex quas?</p>
+                </section>
+
+                <!-- Zona 8 - noutati, informatii medicale si intrebari -->
+                 <section id="diverse">
+                    <section id="noutati">
+                        <h2>Noutati</h2>
+                        <article>
+                            <h3>Actualizare stocuri</h3>
+                            <p>Am <em>reînnoit</em> stocul pentru produsele noastre!</p>
+                        </article>
+                        <article>
+                            <h3>Zile libere</h3>
+                            <p><strong>Vă anunțăm că în prima zi a anului comenzile nu vor putea fi livrate!</strong></p>
+                        </article>
+                        <article>
+                            <h3>Modificare program</h3>
+                            <p>Pe data de 2 ianuarie magazinul nostru va fi <s>închis</s> <ins>deschis</ins></p>
+                        </article>
+                        <article>
+                            <h3>Conferințe</h3>
+                            <figure>
+                                <picture>
+                                    <source srcset="/resurse/imagini/acasa/conference_200.jpg" media="(max-width:700px)">
+                                    <source srcset="/resurse/imagini/acasa/conference_380.jpg" media="(max-width:1200px)">
+                                    <img src="/resurse/imagini/acasa/conference_640.jpg" alt="conferinta-fizioterapie">
+                                </picture>
+                                <figcaption>Conferința de <b>fizioterapie</b> se va desfășura anul acesta online în luna decembrie.</figcaption>
+                            </figure>
+                            <p>Pentru înscrieri vizitați site-ul oficial.<a href="https://colegiulfizioterapeutilor.ro/congres-2024/" target="_blank"><span class="fa-solid fa-circle-info fa-lg"></span></a></p>
+                        </article>
+                    </section>
+                    
+                    <section id="informatii-medicale">
+                        <h2>Informații medicale</h2>
+                        <p>Aflați mai multe despre <b>aparatura medicala</b>, <b>kinetoterapie</b>, <b>fizioterapie</b>, <b>masaj</b> și <i lang="en">wellness</i> dar și despre noutățile din domeniul <b>recuperare medicala</b> urmărind videoclipurile de mai jos:</p>
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a href="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" target="ifr-video">Ce este kinetoterapia</a>
+                                <a href="https://www.youtube.com/embed/jDHsG9svxcM?si=gfeXbb4vjZbZFz5D" target="ifr-video">Beneficiile masajului</a>
+                                <a href="https://www.youtube.com/embed/s1jm_V9W3XY?si=lQsww0s88CI6MAkL" target="ifr-video">Viața de fizioterapeut</a>
+                            </div>
+                            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>  
+                        <p id="descarcare">Pentru a ține evidența sănătății dumneavoastră vă recomandăm să descărcați carnețelul de sănătate.<a href="/resurse/documente/carnețelul-cu-sănătate.docx" download><span class="fa-solid fa-download fa-flip fa-lg"></span></a></p>
+                    </section>
+
+                    <section id="intrebari">
+                        <h2>Întrebări frecvente</h2>
+                        <details>
+                            <summary>Cum pot comanda un produs?</summary>
+                            <p>Selectați produsul dorit și urmați pașii de achiziție.</p>
+                        </details>
+                        <details>
+                            <summary>Ce metode de plată sunt acceptate?</summary>
+                            <p>Plata poate fi efectuată prin card bancar sau ramburs.</p>
+                        </details>
+                        <details>
+                            <summary>Care metodele de livrare?</summary>
+                            <p>Se poate livra prin curier sau easybox.</p>
+                        </details>
+                        <details>
+                            <summary>Există garanție a produselor?</summary>
+                            <p>Toate produsele au o garanție de 2 ani.</p>
+                        </details>
+                    </section>
+                </section>
+            </div>
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

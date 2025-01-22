@@ -1,3 +1,39 @@
+:root {
+    /* Culori principale */
+    --color-1: #72C1C7; /* Primar */
+    --color-2: #71C7B0; /* Secundar 1 */
+    --color-3: #71A6C7; /* Secundar 2 */
+    --color-4: #71C793; /* Secundar 3 */
+    --color-5: #718BC7; /* Secundar 4 */
+
+    /* Background colors */
+    --background-primary: var(--color-1);
+    --background-secondary-1: var(--color-2);
+    --background-secondary-2: var(--color-3);
+    --background-secondary-3: var(--color-4);
+    --background-secondary-4: var(--color-5);
+    --background-color: rgba(255,255,255,0.8);
+    --background-header: rgba(114, 193, 199, 0.8);
+    --background-footer: rgba(113, 199, 176, 0.8);
+
+
+    /* Text */
+    --text-primary: #ffffff; /* alb, pentru contrast */
+    --text-secondary-1: #000000; /* negru, pentru culori deschise */
+    --text-secondary-2: var(--color-4); /* pentru accente subtile */
+
+    /* Border */
+    --border-primary: var(--color-2);
+    --border-secondary-1: var(--color-3);
+    --border-secondary-2: var(--color-5);
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Highlight colors */
+    --highlight-primary: var(--color-4);
+    --highlight-secondary: var(--color-5);
+}
+
 html {
     --dimensiune-text: 18px;
     --spatiere-text: 1rem;

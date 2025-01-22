@@ -1,0 +1,19 @@
+#err-imag{
+    width:20%;    
+}
+#err-imag img{
+    width:100%;
+}
+#err-coloane{
+    display:flex;
+    padding-top:1em;
+    padding-left:1em;
+}
+
+#err-coloane section{
+    font-size:2em;
+    padding-left:1em;
+}
+#err-coloane h2{
+    font-size:2em;
+}
