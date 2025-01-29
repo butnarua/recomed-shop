@@ -17,7 +17,8 @@ body {
                          "zona5"
                          "zona6"
                          "zona7"
-                         "zona8";                     
+                         "zona8"
+                         "zona9";                     
 }
 
 /* Scrollbar orizontal pentru container pe ecrane mici și medii */
@@ -38,3 +39,11 @@ header{
     border-top-right-radius: 0;
 }
 
+/* Grid galerie */
+#grid-galerie {
+    display: block;
+}
+
+#grid-galerie figcaption {
+    text-align:center;
+}

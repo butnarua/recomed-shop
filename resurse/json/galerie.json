@@ -1,0 +1,80 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_fisier":"accidentare-kinetoterapie.png",
+            "titlu":"Kinetoterapie",
+            "alt":"kinetoterapie", 
+            "text_descriere":"Kinetoterapie pentru recuperarea bratului",
+            "timp":"dimineata"
+		},
+        {
+			"cale_fisier":"gantere-kinetoterapie.png",
+            "titlu":"Kinetoterapie",
+            "alt":"kinetoterapie", 
+            "text_descriere":"Gantere pentru kinetoterapie",
+            "timp":"dimineata"
+		},
+        {
+			"cale_fisier":"physiotherapy.png",
+            "titlu":"Fizioterapie",
+            "alt":"fizioterapie", 
+            "text_descriere":"Benzi elastice fizioterapie",
+            "timp":"zi",
+            "author": "Durrah",
+            "title": "Sunset at the Beach",
+            "license": "CC BY 2.0",
+            "license_link": "https://creativecommons.org/licenses/by/2.0/",
+            "image_link": "https://www.flickr.com/photos/durrah/8638154732/"
+		},
+        {
+			"cale_fisier":"aparat-fizioterapie.png",
+            "titlu":"Fizioterapie",
+            "alt":"fizioterapie", 
+            "text_descriere":"Aparat pentru fizioterapie",
+            "timp":"zi"
+		},
+        {
+			"cale_fisier":"simptom-fizioterapie.png",
+            "titlu":"Fizioterapie",
+            "alt":"fizioterapie", 
+            "text_descriere":"Laser pentru fizioterapie",
+            "timp":"zi"
+		},
+        {
+			"cale_fisier":"spate-masaj.png",
+            "titlu":"Masaj",
+            "alt":"masaj", 
+            "text_descriere":"Masajul spatelui",
+            "timp":"zi"
+		},
+        {
+			"cale_fisier":"ustensile-masaj.png",
+            "titlu":"Masaj",
+            "alt":"masaj", 
+            "text_descriere":"Ustensile pentru masaj",
+            "timp":"zi"
+		},
+        {
+			"cale_fisier":"masaj-mana.png",
+            "titlu":"Masaj",
+            "alt":"masaj", 
+            "text_descriere":"Masajul pentru palma",
+            "timp":"zi"
+		},
+        {
+			"cale_fisier":"masaj-ventuze.png",
+            "titlu":"Masaj",
+            "alt":"masaj", 
+            "text_descriere":"Masajul prin aplicare de ventuze",
+            "timp":"zi"
+		},
+        {
+			"cale_fisier":"masa-terapie.png",
+            "titlu":"Wellness",
+            "alt":"wellness", 
+            "text_descriere":"Masa pentru wellness",
+            "timp":"noapte"
+		}
+	]
+}

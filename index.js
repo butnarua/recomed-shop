@@ -1,6 +1,7 @@
 const express= require("express");
 const path= require("path");
 const fs= require("fs");
+const sharp= require("sharp");
 
 app = express();
 
@@ -11,7 +12,8 @@ console.log("Cale fisier index.js",  __filename);
 console.log("Folder curent de lucru",  process.cwd());
 
 obGlobal ={
-    obErori: null
+    obErori: null,
+    obImagini: null
 }
 
 vectorFoldere= ["temp", "poze_uploadate", "backup"];
@@ -25,19 +27,23 @@ app.use("/resurse", express.static(path.join(__dirname,"resurse"))); //folder st
 
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname, "resurse/imagini/ico/favicon/favicon.ico"));
-})
+});
 
 app.get(["/","/index","/home"], function(req, res){
-    res.render("pagini/index", {ip: req.ip});
-})
+    res.render("pagini/index", {ip: req.ip, imagini:obGlobal.obImagini.imagini});
+});
+
+app.get("/galerie", function(req, res) {
+    res.render("pagini/galerie", { imagini:obGlobal.obImagini.imagini });
+});
 
 app.get(/^\/resurse\/[a-z0-9A-Z\/]*\/$/, function(req, res){
     afisareEroare(res, 403);
-})
+});
 
 app.get("/*.ejs", function(req,res){
     afisareEroare(res, 400);
-})
+});
 
 app.get("/*", function(req, res){
     try{
@@ -76,6 +82,7 @@ function initErori(){
 }
 
 initErori();
+initImagini();
 
 function afisareEroare(res, identificator, titlu, text, imagine){
     let eroare = obGlobal.obErori.info_erori.find(function(elem){
@@ -99,6 +106,28 @@ function afisareEroare(res, identificator, titlu, text, imagine){
         text: textCustom,
         imagine: imagineCustom
     })
+}
+
+function initImagini(){
+    var continut= fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json")).toString("utf-8");
+
+    obGlobal.obImagini=JSON.parse(continut);
+    let vImagini=obGlobal.obImagini.imagini;
+
+    let caleAbs=path.join(__dirname, obGlobal.obImagini.cale_galerie);
+    let caleAbsMediu=path.join(__dirname, obGlobal.obImagini.cale_galerie, "mediu");
+    if (!fs.existsSync(caleAbsMediu))
+        fs.mkdirSync(caleAbsMediu);
+
+    for (let imag of vImagini){
+        [numeFis, ext] = imag.cale_fisier.split(".");
+        let caleFisAbs = path.join(caleAbs, imag.cale_fisier);
+        let caleFisMediuAbs = path.join(caleAbsMediu, numeFis+".webp");
+        sharp(caleFisAbs).resize(300).toFile(caleFisMediuAbs);
+        imag.fisier_mediu = path.join("/", obGlobal.obImagini.cale_galerie, "mediu", numeFis+".webp");
+        imag.fisier = path.join("/", obGlobal.obImagini.cale_galerie, imag.cale_fisier);
+    }
+
 }
 
 app.listen(8080);

@@ -98,7 +98,8 @@ a:focus {
     grid-template-areas: "zona1 zona1 zona1"
                          "zona3 zona2 zona4"
                          "zona8 zona8 zona8"
-                         "zona7 zona5 zona6";
+                         "zona7 zona5 zona6"
+                         "zona9 zona9 zona9";
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: center;
     grid-gap: var(--grid-gap);
@@ -147,6 +148,10 @@ a:focus {
 
 #diverse {
     grid-area: zona8;
+}
+
+#galerie-statica {
+    grid-area: zona9;
 }
 
 /* Task tabel */
@@ -359,4 +364,57 @@ h2 {
     text-decoration: none;
 }
 
-  
+  /* Grid galerie */
+  #grid-galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap:0.5em;
+    grid-column-gap:0.5em;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Include padding și margin în dimensiunile elementului */
+    counter-reset: galerie-counter;
+    justify-items: center;
+}
+
+#grid-galerie figure {
+    position: relative;
+    counter-increment: galerie-counter;
+    transition: transform 0.5s ease, border-radius 0.5s ease; /* Adăugăm tranziția la transformare și border-radius */
+}
+
+/* Indexare cu litere mari (A, B, C, ...) */
+#grid-galerie figure::before {
+    content: counter(galerie-counter, upper-alpha) ". ";
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    /* transform: translateY(-150%); */
+}
+
+/* Tranziție pe imagine la hover */
+#grid-galerie figure:hover img {
+    transform: rotate(360deg) scale(1.5); /* Rotire de 360 de grade și mărire cu 50% */
+    border-radius: 0.75rem; /* Rotunjire colțuri */
+    transition: transform 1s ease-in-out, border-radius 1s ease-in-out; /* tranziția la rotație și border-radius */
+}
+
+#grid-galerie img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asigură că imaginea acoperă întreaga zonă a celulei, fără a o distorsiona */
+}
+
+#grid-galerie figcaption {
+    text-align:center;
+    padding-left: 0.7rem;
+}
+
+.despre-container,
+.galerie-container{
+    padding: 1rem;
+}
