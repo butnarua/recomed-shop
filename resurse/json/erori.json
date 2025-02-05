@@ -37,7 +37,7 @@
         },
         
         {
-            "identificator":2,
+            "identificator":500,
             "status":false,
             "titlu":"Eroare baza date",
             "text": "Reveniti mai tarziu!",
