@@ -33,12 +33,26 @@ obGlobal ={
     folderBackup: path.join(__dirname, "backup")
 }
 
-vectorFoldere= ["temp", "poze_uploadate", "backup"];
-for (let folder of vectorFoldere){
+// vectorFoldere= ["temp", "poze_uploadate", "backup"];
+// for (let folder of vectorFoldere){
+//     let folderAbsolutePath = path.join(__dirname, folder);
+//     if (!fs.existsSync(folderAbsolutePath))
+//         fs.mkdirSync(folderAbsolutePath);
+// }
+
+vectorFoldere = ["temp", "poze_uploadate", "backup", "examen", "test", "proiect"];
+let foldereCreate = 0; // Contor pentru folderele nou create
+
+for (let folder of vectorFoldere) {
     let folderAbsolutePath = path.join(__dirname, folder);
-    if (!fs.existsSync(folderAbsolutePath))
+    if (!fs.existsSync(folderAbsolutePath)) {
         fs.mkdirSync(folderAbsolutePath);
+        foldereCreate++; // Incrementăm contorul dacă folderul nu exista și l-am creat
+    }
 }
+
+console.log(`S-au creat ${foldereCreate} foldere noi.`);
+
 
 app.use("/resurse", express.static(path.join(__dirname,"resurse"))); //folder static
 
@@ -125,6 +139,29 @@ app.get("/*", function(req, res){
     }   
 })
 
+// app.get("/*", function(req, res) {
+//     try {
+//         res.render("pagini" + req.url, function(err, rezRandare) {
+//             if (err) {
+//                 if (err.message.startsWith("Failed to lookup view")) {
+//                     afisareEroare(res, 404, "Pagina negasita", "Verificati URL-ul", null, req);
+//                 } else {
+//                     afisareEroare(res, -1, null, null, null, req);
+//                 }
+//             } else {
+//                 res.send(rezRandare);
+//             }
+//         });
+//     } catch (err1) {
+//         if (err1.message.startsWith("Cannot find module")) {
+//             afisareEroare(res, 404, "Pagina negasita", "Verificati URL-ul", null, req);
+//         } else {
+//             afisareEroare(res, -1, null, null, null, req);
+//         }
+//     }
+// });
+
+
 
 initErori();
 initImagini();
@@ -162,6 +199,31 @@ function afisareEroare(res, identificator, titlu, text, imagine){
         imagine: imagineCustom
     })
 }
+
+// function afisareEroare(res, identificator, titlu, text, imagine, req) {
+//     let eroare = obGlobal.obErori.info_erori.find(function(elem) {
+//         return elem.identificator == identificator;
+//     });
+
+//     if (eroare) {
+//         if (eroare.status) res.status(identificator);
+//         var titluCustom = titlu || `${eroare.titlu} - ${req?.originalUrl}`;
+//         var textCustom = text || eroare.text;
+//         var imagineCustom = imagine || eroare.imagine;
+//     } else {
+//         var err = obGlobal.obErori.eroare_default;
+//         var titluCustom = titlu || `${err.titlu} - ${req?.originalUrl}`;
+//         var textCustom = text || err.text;
+//         var imagineCustom = imagine || err.imagine;
+//     }
+
+//     res.render("pagini/eroare", {
+//         titlu: titluCustom,
+//         text: textCustom,
+//         imagine: imagineCustom
+//     });
+// }
+
 
 function initImagini(){
     var continut= fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json")).toString("utf-8");

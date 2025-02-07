@@ -1,18 +1,26 @@
 <h2><a href="/galerie">Galerie</a></h2>
 <div id="grid-galerie">
     <% 
-    let data = new Date();
-    let ora = data.getHours();
-    let perioada = "";
+let data = new Date();
+let ora = data.getHours();
+let secunda = data.getSeconds();
+let perioada = "";
 
-    if (ora >= 5 && ora < 12) {
-        perioada = "dimineata";
-    } else if (ora >= 12 && ora < 20) {
-        perioada = "zi";
-    } else {
-        perioada = "noapte";
-    }
+// Determinarea perioadei zilei
+if (ora >= 5 && ora < 12) {
+    perioada = "dimineata";
+} else if (ora >= 12 && ora < 20) {
+    perioada = "zi";
+} else {
+    perioada = "noapte";
+}
 
+// Alegerea imaginilor de afișat
+let imaginiDeAfisat;
+if (secunda < 30) {
+    // Dacă suntem în prima jumătate a minutului, afișăm toate imaginile
+    imaginiDeAfisat = imagini;
+} else {
     // Filtrare imagini pentru perioada curentă
     let imaginiFiltrate = imagini.filter(imag => imag.timp && imag.timp.includes(perioada));
 
@@ -20,23 +28,24 @@
     let nrImaginiAfisate = Math.min(imaginiFiltrate.length, Math.floor(imaginiFiltrate.length / 3) * 3);
     nrImaginiAfisate = Math.max(nrImaginiAfisate, 6);
 
-    let imaginiDeAfisat = imaginiFiltrate.slice(0, nrImaginiAfisate);
-    %>
+    imaginiDeAfisat = imaginiFiltrate.slice(0, nrImaginiAfisate);
+}
+%>
 
-    <% for (let i = 0; i < imaginiDeAfisat.length; i++) { 
-        let imag = imaginiDeAfisat[i];
-    %>
-        <figure data-index="<%= i %>">
-            <picture>
-                <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1200px)"/>
-                <img src="<%- imag.fisier %>" alt="<%- imag.alt || imag.cale_fisier %>" title="<%- imag.text_descriere %>"/>
-            </picture>
-            <figcaption>
-                <span class="index"></span> <%- imag.text_descriere %>
-                <% if (imag.by) { %>
-                    <br><small>Sursa: <%- imag.by %></small>
-                <% } %>
-            </figcaption>
-        </figure>
-    <% } %>
+<% for (let i = 0; i < imaginiDeAfisat.length; i++) { 
+    let imag = imaginiDeAfisat[i];
+%>
+    <figure data-index="<%= i %>">
+        <picture>
+            <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1200px)"/>
+            <img src="<%- imag.fisier %>" alt="<%- imag.alt || imag.cale_fisier %>" title="<%- imag.text_descriere %>"/>
+        </picture>
+        <figcaption>
+            <span class="index"></span> <%- imag.text_descriere %>
+            <% if (imag.by) { %>
+                <br><small>Sursa: <%- imag.by %></small>
+            <% } %>
+        </figcaption>
+    </figure>
+<% } %>
 </div>

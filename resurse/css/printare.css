@@ -1,5 +1,6 @@
 #banner-printare,
-#watermark {
+#watermark,
+#grupa {
     display: none;
 }
 
@@ -107,6 +108,18 @@
     #anunturi,
     #server{
         page-break-after: always;
+    }
+
+    #grupa{
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 2cm;
+        border: 4px double var(--text-secondary-1);
+        text-align: center;
+        opacity: 0.65;
     }
     
 }

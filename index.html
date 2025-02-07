@@ -71,6 +71,7 @@
         <header>
             <h1>Recomed Shop</h1>
             <p id="watermark">Butnaru<br>Andrei Bogdan</p>
+            <p id="grupa">Anul 1<br>Grupa 2</p>
             <nav>
                 <input id="ch-menu" type="checkbox">
                 <div class="hamburger-menu-container">
@@ -108,6 +109,7 @@
                     <li><a href="#">Inregistrare</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
+
                 
             </nav>
         </header>
@@ -117,6 +119,7 @@
                 <!-- Zona 1 cu produse -->
                 <section id="categorii-produse">
                     <h2>Produsele noastre</h2>
+                    
                     <section>
                         <h3>Categorii produse</h3>
                         <p>Vă prezentăm mai jos categoriile noastre de produse ce cuprind o gamă nișată pe nevoile dumneavoastră</p>
@@ -276,6 +279,7 @@
                                 <picture>
                                     <source srcset="./resurse/imagini/acasa/conference_200.jpg" media="(max-width:700px)">
                                     <source srcset="./resurse/imagini/acasa/conference_380.jpg" media="(max-width:1200px)">
+                                    <!-- <source srcset="./resurse/imagini/acasa/conference_380.jpg" media="(min-width: 500px) and (max-width:800px)"> -->
                                     <img src="./resurse/imagini/acasa/conference_640.jpg" alt="conferinta-fizioterapie">
                                 </picture>
                                 <figcaption>Conferința de <b>fizioterapie</b> se va desfășura anul acesta online în luna decembrie.</figcaption>
@@ -287,13 +291,19 @@
                     <section id="informatii-medicale">
                         <h2>Informații medicale</h2>
                         <p>Aflați mai multe despre <b>aparatura medicala</b>, <b>kinetoterapie</b>, <b>fizioterapie</b>, <b>masaj</b> și <i lang="en">wellness</i> dar și despre noutățile din domeniul <b>recuperare medicala</b> urmărind videoclipurile de mai jos:</p>
-                        <div class="container-iframe">
+                        <div id="link-iframe" class="container-iframe">
+
                             <div class="taburi-iframe">
                                 <a href="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" target="ifr-video">Ce este kinetoterapia</a>
                                 <a href="https://www.youtube.com/embed/jDHsG9svxcM?si=gfeXbb4vjZbZFz5D" target="ifr-video">Beneficiile masajului</a>
                                 <a href="https://www.youtube.com/embed/s1jm_V9W3XY?si=lQsww0s88CI6MAkL" target="ifr-video">Viața de fizioterapeut</a>
                             </div>
-                            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe id="contentFrame" name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            
+                            <!-- <iframe id="contentFrame" name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/--LCs91zIuU?si=o29RjSGspjhnoYdQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                            <!-- <p>Vizitează pagina facultății:</p> -->
+                            <!-- <a href="https://fmi.unibuc.ro" target="contentFrame">Facultatea de Matematică și Informatică</a> -->
+
                         </div>  
                         <p id="descarcare">Pentru a ține evidența sănătății dumneavoastră vă recomandăm să descărcați carnețelul de sănătate.<a href="./resurse/documente/carnețelul-cu-sănătate.docx" download><span class="fa-solid fa-download fa-flip fa-lg"></span></a></p>
                     </section>

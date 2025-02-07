@@ -96,10 +96,17 @@ a:focus {
     --grid-gap: 1.38rem;
     display: grid;
     grid-template-areas: "zona1 zona1 zona1"
+                         "zona5 zona2 zona4"
+                         "zona8 zona8 zona8"
+                         "zona7 zona3 zona6"
+                         "zona9 zona9 zona9";
+
+    /* grid-template-areas: "zona1 zona1 zona1"
                          "zona3 zona2 zona4"
                          "zona8 zona8 zona8"
                          "zona7 zona5 zona6"
-                         "zona9 zona9 zona9";
+                         "zona9 zona9 zona9"; */
+
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: center;
     grid-gap: var(--grid-gap);
@@ -202,6 +209,12 @@ a:focus {
     transition: box-shadow 0.5s ease;
   }
 
+  /* Task etapa 2 */
+  /* th:hover + th {
+    background-color: green;
+} */
+
+
 #tab-aparatura tfoot tr td {
     text-align: center;
     font-style: italic;
@@ -227,6 +240,9 @@ a:focus {
     display: flex;
     flex-direction: column; /* Linkurile să fie afișate pe verticală */
     gap: 0.2rem; /* Spațiu între linkuri */
+    /* align-items: flex-start; */
+    align-items: flex-start;
+    /* justify-content: flex-end; */
 }
 
 .taburi-iframe a {
@@ -257,16 +273,19 @@ a:focus {
 
 /* Stilizare pentru iframe */
 iframe {
-    flex: 1; /* Ocupă spațiul rămas în container */
+    flex: 0.5; /* Ocupă spațiul rămas în container */
     border: var(--border-radius) solid var(--border-primary);
     height: 25rem;
 }
 
 /* Task Link top */
+
 #link-top {
     position: fixed;
     bottom: 0.5rem;
     right: 0.5rem;
+    /* top: 0.5rem;
+    left: 0.5rem; */
     width: 3rem;
     height: 3rem;
     background: var(--text-primary);
@@ -283,6 +302,7 @@ iframe {
     transition: opacity 600ms, transform 600ms;
     
 }
+
 
 #link-top:hover {
     opacity: 1;
